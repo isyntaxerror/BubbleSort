@@ -1,24 +1,24 @@
 #include <string.h>
-
+#include<iostream>
 #include "Bubblesort.h"
-
-void BubbleSort(int A [], int NumElements)
+void BubbleSort(int a[], int n)
 {
-	int		i;
-	bool	Sorted;
-	int		Temp;
-
-	
-	do {
-		Sorted = true;
-		NumElements--;
-		for (i = 0; i < NumElements; i++)
-			if (A[i] > A[i + 1])
-			{
-				Temp		= A[i];
-				A[i] = A[i + 1];
-				A[i + 1] = Temp;
-				Sorted = false;
-			}
-	} while (!Sorted);
+	int i,j;
+	bool swapped;
+	int temp;
+	for(i=0;i<n-1;i++)
+	{
+		swapped=false;
+		for(j=0;j<n-i-1;j++)
+		{
+			if(a[j]>a[j+1])
+				  {
+					  int temp=a[j];
+					  a[j]=a[j+1];
+					  a[j+1]=temp;
+					  swapped=true;
+				  }
+			if(!swapped) break;
+		}
+	}
 }
